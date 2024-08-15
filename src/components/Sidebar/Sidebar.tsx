@@ -2,16 +2,16 @@
 import { useState } from 'react';
 
 const Sidebar = () => {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isExpanded, setIsExpanded] = useState(true);
 
+    // 사이드 바의 상태를 토글하는 함수
     const toggleSidebar = () => {
-        setIsOpen(!isOpen);
+        setIsExpanded(!isExpanded);
     };
 
     return (
-        <div className={`sidebar ${isOpen ? 'open' : ''}`}>
+        <div className={`sidebar ${isExpanded ? 'expanded' : ''}`}>
             <button onClick={toggleSidebar}>Toggle Sidebar</button>
-            {/* Add your sidebar content here */}
         </div>
     );
 };
